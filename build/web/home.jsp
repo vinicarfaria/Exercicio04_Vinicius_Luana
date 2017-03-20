@@ -36,26 +36,16 @@
         </style>
     </head>
     <body>
-       <%-- <c:choose>
-            <c:when test="${sessionScope.idUsuario eq null}" >
-                É preciso fazer autenticação para acessar essa página!<br /><br /><br />
-                <button type="button" onclick="location.href='index.html'"  >Voltar</button>
-            </c:when>
-            <c:when test="${sessionScope[idUsuario] ne null}" >--%>
-            <%
-                if (session.getAttribute("idUsuario")!= null){%>
-                    <h1>Seja bem-vindo 
-                    <c:out value="${sessionScope.idUsuario}" />
-                    !</h1><br /><br /><br /><br />
-                    <button type="button" onclick="location.href='logoff.jsp';"  >Sair</button>
-                <%}else{%>
-                    <h1>É preciso estar logado para acessar esta página.</h1><br /><br /><br /><br />
-                    <button type="button" onclick="location.href='index.html';"  >Sair</button>
-                <%}
-            %>
-               
-            <%--</c:when>
-            
-        </c:choose>--%>
+        <%
+            if (session.getAttribute("idUsuario")!= null){%>
+                <h1>Seja bem-vindo 
+                <c:out value="${sessionScope.idUsuario}" />
+                !</h1><br /><br /><br /><br />
+                <button type="button" onclick="location.href='logoff.jsp';"  >Sair</button>
+            <%}else{%>
+                <h1>É preciso estar logado para acessar esta página.</h1><br /><br /><br /><br />
+                <button type="button" onclick="location.href='index.html';"  >Sair</button>
+            <%}
+        %>
     </body>
 </html>
